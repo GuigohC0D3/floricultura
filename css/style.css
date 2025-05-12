@@ -358,15 +358,19 @@ section.sobre p {
     object-fit: contain;
   }
 
-    .hero-buttons {
-    justify-content: center;
+  .hero-buttons {
     flex-direction: column;
     align-items: center;
+    gap: 16px;
+    margin-top: 30px;
   }
 
   .hero-buttons a {
     width: 100%;
     max-width: 300px;
+    padding: 14px;
+    font-size: 1.05rem;
     text-align: center;
+    white-space: nowrap;
   }
 }
