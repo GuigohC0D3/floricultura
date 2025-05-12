@@ -357,4 +357,16 @@ section.sobre p {
     height: auto;
     object-fit: contain;
   }
+
+    .hero-buttons {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-buttons a {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+  }
 }
