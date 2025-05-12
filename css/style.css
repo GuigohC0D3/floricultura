@@ -5,15 +5,15 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   background-color: #ffffff;
   color: #0e172c;
   line-height: 1.6;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 /* ======= Navbar ======= */
@@ -35,8 +35,27 @@ html {
   color: #0e172c;
 }
 
+/* Hamburguer */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: #0e172c;
+  display: block;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 30px;
+}
+
 .nav-menu a {
-  margin-left: 30px;
   text-decoration: none;
   color: #0e172c;
   font-weight: 500;
@@ -72,12 +91,23 @@ html {
   margin-bottom: 30px;
 }
 
+/* Botões principais */
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 16px;
+  margin-top: 30px;
+}
+
 .hero-buttons a {
-  text-decoration: none;
-  padding: 12px 24px;
-  margin-right: 15px;
+  padding: 14px 24px;
   border-radius: 8px;
   font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  white-space: nowrap;
 }
 
 .btn-primary {
@@ -91,19 +121,16 @@ html {
   color: #0e172c;
 }
 
+/* Slider */
 .hero-slider {
   position: relative;
   flex: 1;
   max-width: 600px;
   height: 350px;
-  margin: 0 auto;
+  margin-top: 20px;
   overflow: hidden;
   border-radius: 10px;
   background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .slides {
@@ -163,7 +190,7 @@ html {
   background-color: #a786df;
 }
 
-/* ======= Seções Sobre e Serviços ======= */
+/* ======= Seções ======= */
 section.sobre,
 section.servicos {
   padding: 80px 10%;
@@ -195,6 +222,7 @@ section.sobre p {
   margin: 0 auto;
 }
 
+/* Serviços */
 .lista-servicos {
   list-style: none;
   padding: 0;
@@ -218,35 +246,6 @@ section.sobre p {
 .lista-servicos li:hover {
   transform: translateY(-5px);
   border-color: #a786df;
-}
-
-/* ======= Steps Section ======= */
-.steps {
-  display: flex;
-  justify-content: space-around;
-  background-color: #a786df;
-  padding: 60px 10%;
-  flex-wrap: wrap;
-  color: #fff;
-}
-
-.step {
-  flex: 1;
-  min-width: 220px;
-  margin: 10px 20px;
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.step h3 {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-}
-
-.step p {
-  font-size: 1rem;
 }
 
 /* ======= Footer ======= */
@@ -302,22 +301,7 @@ section.sobre p {
   color: #d9d4e7;
 }
 
-/* ====== HAMBURGUER ====== */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 5px;
-}
-
-.hamburger span {
-  width: 25px;
-  height: 3px;
-  background-color: #0e172c;
-  display: block;
-}
-
-/* NAV RESPONSIVO */
+/* ======= Responsivo ======= */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
@@ -347,9 +331,26 @@ section.sobre p {
     padding: 60px 5%;
   }
 
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .hero-buttons a {
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+  }
+
   .hero-slider {
     width: 100%;
     height: auto;
+    margin-top: 40px;
   }
 
   .slides img {
@@ -358,19 +359,29 @@ section.sobre p {
     object-fit: contain;
   }
 
-  .hero-buttons {
+  .steps {
     flex-direction: column;
     align-items: center;
-    gap: 16px;
-    margin-top: 30px;
+    padding: 40px 5%;
   }
 
-  .hero-buttons a {
+  .step {
     width: 100%;
-    max-width: 300px;
-    padding: 14px;
-    font-size: 1.05rem;
+    max-width: 400px;
+  }
+
+  section.sobre,
+  section.servicos {
+    padding: 60px 5%;
+  }
+
+  section h2 {
+    font-size: 1.8rem;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    white-space: nowrap;
   }
 }
