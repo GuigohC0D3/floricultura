@@ -12,6 +12,10 @@ body {
   line-height: 1.6;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* ======= Navbar ======= */
 .navbar {
   display: flex;
@@ -110,7 +114,6 @@ body {
 }
 
 .slides img {
-  margin-top: 10%;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -118,7 +121,6 @@ body {
   border-radius: 10px;
 }
 
-/* Bolinhas */
 .indicators {
   display: flex;
   justify-content: center;
@@ -139,7 +141,6 @@ body {
   background-color: #0e172c;
 }
 
-/* Setas abaixo */
 .arrows {
   display: flex;
   justify-content: center;
@@ -160,6 +161,63 @@ body {
 
 .arrows button:hover {
   background-color: #a786df;
+}
+
+/* ======= Seções Sobre e Serviços ======= */
+section.sobre,
+section.servicos {
+  padding: 80px 10%;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+section.servicos {
+  background-color: #f9f8fc;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+section h2 {
+  font-size: 2.2rem;
+  color: #0e172c;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+section.sobre p {
+  font-size: 1.1rem;
+  color: #3b3b3b;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.lista-servicos {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.lista-servicos li {
+  background-color: #ffffff;
+  border: 1px solid #d9d4e7;
+  border-radius: 10px;
+  padding: 20px;
+  font-size: 1.1rem;
+  color: #0e172c;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.lista-servicos li:hover {
+  transform: translateY(-5px);
+  border-color: #a786df;
 }
 
 /* ======= Steps Section ======= */
@@ -244,100 +302,54 @@ body {
   color: #d9d4e7;
 }
 
-/* ======= Seções Sobre e Serviços ======= */
-section.sobre,
-section.servicos {
-  padding: 80px 10%;
-  background-color: #ffffff;
-  text-align: center;
-}
-
-section.servicos {
-  background-color: #f9f8fc; /* leve contraste com a seção anterior */
-}
-
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-section h2 {
-  font-size: 2.2rem;
-  color: #0e172c;
-  margin-bottom: 25px;
-  font-weight: 700;
-}
-
-section.sobre p {
-  font-size: 1.1rem;
-  color: #3b3b3b;
-  line-height: 1.7;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-/* Lista de serviços */
-.lista-servicos {
-  list-style: none;
-  padding: 0;
-  margin-top: 30px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.lista-servicos li {
-  background-color: #ffffff;
-  border: 1px solid #d9d4e7;
-  border-radius: 10px;
-  padding: 20px;
-  font-size: 1.1rem;
-  color: #0e172c;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
-}
-
-.lista-servicos li:hover {
-  transform: translateY(-5px);
-  border-color: #a786df;
-}
-
-
-/* Responsivo */
-@media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-}
-
 /* ======= Responsivo ======= */
 @media (max-width: 768px) {
-  .hero {
+  .navbar {
     flex-direction: column;
-    text-align: center;
+    align-items: flex-start;
+    gap: 10px;
   }
 
   .nav-menu {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    align-items: flex-end;
+    width: 100%;
   }
 
-  .nav-menu a {
-    margin-left: 0;
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 5%;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-slider {
+    height: auto;
+    width: 100%;
   }
 
   .steps {
     flex-direction: column;
     align-items: center;
+    padding: 40px 5%;
   }
 
   .step {
     width: 100%;
     max-width: 400px;
+  }
+
+  section.sobre,
+  section.servicos {
+    padding: 60px 5%;
+  }
+
+  section h2 {
+    font-size: 1.8rem;
   }
 
   .footer-container {
