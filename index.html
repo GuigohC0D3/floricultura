@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Floricultura Dona Florinda</title>
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,6 +16,11 @@
     <!-- NAVBAR -->
     <header class="navbar">
       <div class="logo">🌸 Dona Florinda</div>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
       <nav class="nav-menu">
         <a href="#">Início</a>
         <a href="#sobre">Sobre</a>
@@ -25,38 +30,52 @@
     </header>
 
     <!-- HERO SECTION -->
-    <div class="hero-slider">
-      <div class="slides">
-        <img src="./img/floricultrua.jpg" alt="Arranjo 1" />
-        <img
-          src="./img/box_orquidea_com_ursinho_825_1_654eea9f2f467282bd24f5fe6c86addf.webp"
-          alt="Arranjo 2"
-        />
-        <img src="./img/7c98ed60c308304aa3d0b60e4156ecf8.jpg" alt="Arranjo 3" />
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Flores para todos os momentos</h1>
+        <p>
+          Transforme ocasiões em memórias com nossos arranjos personalizados.
+        </p>
+        <div class="hero-buttons">
+          <a href="#contato" class="btn-primary">Faça seu pedido</a>
+          <a href="#servicos" class="btn-secondary">Conheça os serviços</a>
+        </div>
       </div>
-
-      <!-- Bolinhas -->
-      <div class="indicators">
-        <span class="dot active" data-index="0"></span>
-        <span class="dot" data-index="1"></span>
-        <span class="dot" data-index="2"></span>
+      <div class="hero-slider">
+        <div class="slides">
+          <img src="./img/floricultrua.jpg" alt="Arranjo 1" />
+          <img
+            src="./img/box_orquidea_com_ursinho_825_1_654eea9f2f467282bd24f5fe6c86addf.webp"
+            alt="Arranjo 2"
+          />
+          <img
+            src="./img/7c98ed60c308304aa3d0b60e4156ecf8.jpg"
+            alt="Arranjo 3"
+          />
+        </div>
+        <div class="indicators">
+          <span class="dot active" data-index="0"></span>
+          <span class="dot" data-index="1"></span>
+          <span class="dot" data-index="2"></span>
+        </div>
+        <div class="arrows">
+          <button class="prev">&#10094;</button>
+          <button class="next">&#10095;</button>
+        </div>
       </div>
+    </section>
 
-      <!-- Setas -->
-      <div class="arrows">
-        <button class="prev">&#10094;</button>
-        <button class="next">&#10095;</button>
-      </div>
-    </div>
-
+    <!-- SOBRE -->
     <section id="sobre" class="sobre">
       <div class="container">
         <h2>Sobre Nós</h2>
         <p>
-          A <strong>Floricultura Dona Florinda</strong> está há mais de 10 anos
-          espalhando amor e beleza com flores frescas e arranjos personalizados.
-          Com carinho e dedicação, cuidamos de cada detalhe para transformar
-          momentos em memórias inesquecíveis.
+          Fundada com o propósito de transformar sentimentos em flores, a
+          <strong>Floricultura Dona Florinda</strong>
+          é referência em delicadeza, carinho e compromisso com a beleza. Há
+          mais de uma década, oferecemos arranjos exclusivos, buquês
+          encantadores e serviços personalizados para tornar cada ocasião
+          verdadeiramente especial.
         </p>
       </div>
     </section>
@@ -71,22 +90,6 @@
           <li>🌻 Assinatura de flores semanais</li>
           <li>🌼 Entregas rápidas com embalagem especial</li>
         </ul>
-      </div>
-    </section>
-
-    <!-- STEPS / FUNCIONALIDADES -->
-    <section class="steps">
-      <div class="step">
-        <h3>Etapa 1</h3>
-        <p>Escolha o tipo de arranjo floral ideal.</p>
-      </div>
-      <div class="step">
-        <h3>Etapa 2</h3>
-        <p>Personalize o pedido conforme sua ocasião.</p>
-      </div>
-      <div class="step">
-        <h3>Etapa 3</h3>
-        <p>Receba em casa com todo cuidado e carinho.</p>
       </div>
     </section>
 
@@ -116,5 +119,10 @@
     </footer>
 
     <script src="./JS/script.js"></script>
+    <script>
+      function toggleMenu() {
+        document.querySelector(".nav-menu").classList.toggle("active");
+      }
+    </script>
   </body>
 </html>
